@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kkasir — Aplikasi Kasir POS #1 untuk UMKM Indonesia</title>
+    <meta name="description" content="Download Kkasir, aplikasi kasir (POS) offline-first untuk Android. Gratis, cepat, dan mudah digunakan untuk semua jenis usaha.">
+    <meta name="keywords" content="kasir, POS, aplikasi kasir, UMKM, point of sale, android, offline">
+    <meta property="og:title" content="Kkasir — Aplikasi Kasir POS Offline-First">
+    <meta property="og:description" content="Kelola toko Anda tanpa repot. Bekerja penuh offline, sync otomatis saat online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kkasir.my.id">
+    <link rel="canonical" href="https://kkasir.my.id">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════════════
+           KKASIR — Premium Landing Page
+           ═══════════════════════════════════════════════════ */
+        :root {
+            --bg: #06060a;
+            --bg-card: #111118;
+            --bg-card-2: #16161f;
+            --bg-hover: #1c1c28;
+            --surface: #0d0d14;
+            --text: #f0f0f5;
+            --text-2: #a0a0b8;
+            --text-3: #6b6b82;
+            --accent: #8b5cf6;
+            --accent-2: #a78bfa;
+            --accent-3: #c4b5fd;
+            --accent-glow: rgba(139, 92, 246, 0.15);
+            --accent-glow-2: rgba(139, 92, 246, 0.08);
+            --green: #34d399;
+            --green-bg: rgba(52, 211, 153, 0.1);
+            --orange: #fb923c;
+            --orange-bg: rgba(251, 146, 60, 0.1);
+            --blue: #60a5fa;
+            --blue-bg: rgba(96, 165, 250, 0.1);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-2: rgba(255, 255, 255, 0.08);
+            --r: 20px;
+            --r-sm: 14px;
+            --r-xs: 8px;
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── Ambient Background ─── */
+        .ambient {
+            position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .ambient .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            animation: orbFloat 20s ease-in-out infinite alternate;
+        }
+        .ambient .orb-1 {
+            width: 500px; height: 500px;
+            background: rgba(139,92,246,0.12);
+            top: -100px; left: -100px;
+        }
+        .ambient .orb-2 {
+            width: 400px; height: 400px;
+            background: rgba(96,165,250,0.08);
+            top: 40%; right: -150px;
+            animation-delay: -8s;
+        }
+        .ambient .orb-3 {
+            width: 350px; height: 350px;
+            background: rgba(168,85,247,0.06);
+            bottom: -50px; left: 30%;
+            animation-delay: -14s;
+        }
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, -30px) scale(1.1); }
+            100% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* ─── Nav ─── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(6,6,10,0.72);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 60px;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
+        .logo-mark {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            border-radius: 9px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 15px; color: #fff;
+            box-shadow: 0 2px 12px var(--accent-glow);
+        }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a {
+            font-size: 13.5px; font-weight: 500; color: var(--text-2);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            padding: 8px 18px !important;
+            background: var(--accent) !important;
+            color: #fff !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+            font-size: 13px !important;
+            transition: all 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--accent-2) !important; transform: translateY(-1px); }
+
+        /* ─── Hero ─── */
+        .hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative; z-index: 1;
+        }
+        .hero-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 18px 7px 8px;
+            background: var(--accent-glow-2);
+            border: 1px solid rgba(139,92,246,0.15);
+            border-radius: 100px;
+            font-size: 13px; font-weight: 600; color: var(--accent-2);
+            margin-bottom: 32px;
+            animation: fadeUp .7s ease;
+        }
+        .hero-pill .dot {
+            width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity: 1; } 50% { opacity: .4; }
+        }
+        .hero h1 {
+            font-size: clamp(38px, 5.5vw, 64px);
+            font-weight: 900; line-height: 1.08;
+            letter-spacing: -0.035em;
+            margin-bottom: 20px;
+            animation: fadeUp .7s ease .1s both;
+        }
+        .grad {
+            background: linear-gradient(135deg, var(--accent-2), #e879f9, var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 16.5px; color: var(--text-2); max-width: 500px;
+            margin: 0 auto 40px; line-height: 1.7;
+            animation: fadeUp .7s ease .2s both;
+        }
+        .hero-actions {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 14px; margin-bottom: 16px;
+            animation: fadeUp .7s ease .3s both;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 32px; border-radius: 14px;
+            font-weight: 700; font-size: 15px;
+            transition: all 0.3s ease; border: none; cursor: pointer;
+        }
+        .btn-main {
+            background: linear-gradient(135deg, #7c3aed, var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 28px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(139,92,246,0.3);
+        }
+        .btn-main svg { flex-shrink: 0; }
+        .btn-ghost {
+            background: var(--bg-card);
+            color: var(--text-2);
+            border: 1px solid var(--border-2);
+        }
+        .btn-ghost:hover { background: var(--bg-hover); color: var(--text); border-color: rgba(255,255,255,0.12); }
+        .hero-meta {
+            font-size: 13px; color: var(--text-3);
+            animation: fadeUp .7s ease .4s both;
+        }
+        .hero-meta span { margin: 0 6px; }
+
+        /* ─── Stats ─── */
+        .stats {
+            padding: 0 0 80px; position: relative; z-index: 1;
+            animation: fadeUp .7s ease .5s both;
+        }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+            background: var(--border);
+            border-radius: var(--r); overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .stat {
+            background: var(--bg-card); padding: 28px 20px; text-align: center;
+        }
+        .stat-val { font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+        .stat-lbl { font-size: 12.5px; color: var(--text-3); font-weight: 500; }
+
+        /* ─── Features ─── */
+        .features { padding: 80px 0; position: relative; z-index: 1; }
+        .section-tag {
+            display: inline-flex; padding: 6px 14px;
+            background: var(--accent-glow-2);
+            border: 1px solid rgba(139,92,246,0.12);
+            border-radius: 100px;
+            font-size: 12px; font-weight: 700; color: var(--accent-2);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+        .section-head { text-align: center; margin-bottom: 52px; }
+        .section-head h2 {
+            font-size: clamp(28px, 3.5vw, 40px); font-weight: 800;
+            letter-spacing: -0.02em; margin-bottom: 12px;
+        }
+        .section-head p { font-size: 15px; color: var(--text-2); max-width: 480px; margin: 0 auto; }
+        .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+        .feat {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 30px 26px;
+            transition: all 0.35s ease;
+        }
+        .feat:hover { background: var(--bg-hover); border-color: var(--border-2); transform: translateY(-4px); }
+        .feat-ic {
+            width: 48px; height: 48px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; margin-bottom: 18px;
+        }
+        .feat-ic.purple { background: var(--accent-glow); }
+        .feat-ic.green { background: var(--green-bg); }
+        .feat-ic.orange { background: var(--orange-bg); }
+        .feat-ic.blue { background: var(--blue-bg); }
+        .feat h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
+        .feat p { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
+
+        /* ─── How It Works ─── */
+        .how { padding: 80px 0; position: relative; z-index: 1; }
+        .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 32px 28px;
+            position: relative; overflow: hidden;
+        }
+        .step::before {
+            content: attr(data-num);
+            position: absolute; top: -8px; right: 16px;
+            font-size: 80px; font-weight: 900; color: rgba(139,92,246,0.06);
+            line-height: 1;
+        }
+        .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .step p { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
+        .step-connector {
+            display: none; /* shown between steps on desktop */
+        }
+
+        /* ─── Releases / Changelog ─── */
+        .releases { padding: 80px 0; position: relative; z-index: 1; }
+        .rel-list { display: flex; flex-direction: column; gap: 14px; }
+        .rel {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 28px 30px;
+            transition: border-color 0.3s;
+        }
+        .rel:hover { border-color: var(--border-2); }
+        .rel.current {
+            border-color: rgba(139,92,246,0.2);
+            background: linear-gradient(135deg, rgba(139,92,246,0.03), var(--bg-card));
+        }
+        .rel-top {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+        }
+        .rel-ver { display: flex; align-items: center; gap: 10px; }
+        .rel-ver h3 { font-size: 18px; font-weight: 700; }
+        .tag {
+            padding: 3px 10px; border-radius: 100px;
+            font-size: 10.5px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .tag-new { background: var(--green-bg); color: var(--green); }
+        .rel-info {
+            display: flex; gap: 16px; font-size: 12.5px; color: var(--text-3);
+        }
+        .rel-changes { list-style: none; margin-bottom: 20px; }
+        .rel-changes li {
+            padding: 5px 0; font-size: 13.5px; color: var(--text-2);
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .rel-changes li::before {
+            content: '✦'; color: var(--accent-2); font-size: 10px;
+            margin-top: 4px; flex-shrink: 0;
+        }
+        .btn-sm {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px;
+            background: rgba(139,92,246,0.08);
+            border: 1px solid rgba(139,92,246,0.15);
+            color: var(--accent-2);
+            border-radius: var(--r-sm);
+            font-size: 13px; font-weight: 600;
+            transition: all 0.25s;
+        }
+        .btn-sm:hover { background: rgba(139,92,246,0.15); transform: translateY(-1px); }
+
+        /* ─── CTA ─── */
+        .cta-section {
+            padding: 80px 0 100px; position: relative; z-index: 1;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(96,165,250,0.04));
+            border: 1px solid rgba(139,92,246,0.15);
+            border-radius: 28px; padding: 60px 40px;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-box h2 {
+            font-size: clamp(24px, 3vw, 36px); font-weight: 800;
+            letter-spacing: -0.02em; margin-bottom: 12px;
+            position: relative;
+        }
+        .cta-box p {
+            font-size: 15px; color: var(--text-2); max-width: 440px;
+            margin: 0 auto 32px; position: relative;
+        }
+        .cta-box .btn { position: relative; }
+
+        /* ─── Footer ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0; position: relative; z-index: 1;
+        }
+        .footer-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .footer-inner p { font-size: 12.5px; color: var(--text-3); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 12.5px; color: var(--text-3); transition: color .2s; }
+        .footer-links a:hover { color: var(--text-2); }
+
+        /* ─── Animations ─── */
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(18px); }
+            to { opacity:1; transform: translateY(0); }
+        }
+        .reveal {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 900px) {
+            .feat-grid, .steps { grid-template-columns: 1fr 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .feat-grid, .steps, .stats-grid { grid-template-columns: 1fr; }
+            .hero { padding: 130px 0 60px; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 320px; justify-content: center; }
+            .cta-box { padding: 40px 24px; }
+            .footer-inner { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<!-- Nav -->
+<nav>
+    <div class="container nav-inner">
+        <a href="/" class="logo">
+            <div class="logo-mark">K</div>
+            <span>Kkasir</span>
+        </a>
+        <div class="nav-links">
+            <a href="#fitur">Fitur</a>
+            <a href="#cara-kerja">Cara Kerja</a>
+            <a href="#changelog">Changelog</a>
+            <a href="#download" class="nav-cta">Download</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="download">
+    <div class="container">
+        <div class="hero-pill">
+            <span class="dot"></span>
+            v1.0.0 — Tersedia sekarang
+        </div>
+        <h1>Kelola Toko Anda<br>dengan <span class="grad">Kkasir</span></h1>
+        <p class="hero-desc">Aplikasi kasir (POS) offline-first yang dirancang khusus untuk UMKM Indonesia. Cepat, ringan, dan tetap berjalan tanpa internet.</p>
+        <div class="hero-actions">
+            <a href="releases/v1.0.0/kkasir-v1.0.0.apk" download class="btn btn-main" id="mainDownload">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download APK
+            </a>
+            <a href="#changelog" class="btn btn-ghost">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Lihat Changelog
+            </a>
+        </div>
+        <p class="hero-meta">Android 5.0+ <span>•</span> 61.8 MB <span>•</span> Gratis + Fitur Pro</p>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-val">100%</div>
+                <div class="stat-lbl">Offline Capable</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">&lt;2s</div>
+                <div class="stat-lbl">Waktu Buka App</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">Pro</div>
+                <div class="stat-lbl">Upgrade Tersedia</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">∞</div>
+                <div class="stat-lbl">Transaksi / Hari</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="fitur">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-tag">Fitur</div>
+            <h2>Semua yang UMKM butuhkan</h2>
+            <p>Fitur lengkap tanpa biaya tersembunyi. Upgrade ke Pro untuk multi-user dan sinkronisasi cloud.</p>
+        </div>
+        <div class="feat-grid">
+            <div class="feat reveal">
+                <div class="feat-ic purple">📡</div>
+                <h3>Offline-First</h3>
+                <p>Transaksi tetap jalan tanpa internet. Data tersimpan lokal dan sync otomatis saat online kembali.</p>
+            </div>
+            <div class="feat reveal">
+                <div class="feat-ic green">🧾</div>
+                <h3>Cetak & Share Struk</h3>
+                <p>Cetak langsung ke printer thermal Bluetooth atau kirim struk via WhatsApp sebagai gambar.</p>
+            </div>
+            <div class="feat reveal">
+                <div class="feat-ic blue">📊</div>
+                <h3>Laporan & Grafik</h3>
+                <p>Dashboard penjualan harian & bulanan, produk terlaris, dan export data ke CSV atau PDF.</p>
+            </div>
+            <div class="feat reveal">
+                <div class="feat-ic orange">👥</div>
+                <h3>Multi-User (Pro)</h3>
+                <p>Tambah kasir dengan PIN login. Owner bisa pantau semua transaksi dari perangkat manapun.</p>
+            </div>
+            <div class="feat reveal">
+                <div class="feat-ic purple">🔄</div>
+                <h3>Auto Update</h3>
+                <p>Notifikasi otomatis saat versi baru tersedia. Download sekali klik langsung dari aplikasi.</p>
+            </div>
+            <div class="feat reveal">
+                <div class="feat-ic green">🛡️</div>
+                <h3>Aman & Privat</h3>
+                <p>PIN terenkripsi, Row Level Security di cloud, dan data sepenuhnya milik Anda.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="how" id="cara-kerja">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-tag">Cara Kerja</div>
+            <h2>3 langkah, langsung pakai</h2>
+            <p>Tidak perlu daftar akun, tidak perlu kartu kredit. Download dan langsung jualan.</p>
+        </div>
+        <div class="steps">
+            <div class="step reveal" data-num="1">
+                <h3>Download & Install</h3>
+                <p>Download APK dari halaman ini. Buka file, izinkan instalasi, dan selesai. Tidak perlu Play Store.</p>
+            </div>
+            <div class="step reveal" data-num="2">
+                <h3>Tambah Produk</h3>
+                <p>Masukkan nama, harga, dan stok produk Anda. Bisa juga import dari file CSV jika sudah punya data.</p>
+            </div>
+            <div class="step reveal" data-num="3">
+                <h3>Mulai Transaksi</h3>
+                <p>Ketuk produk, atur jumlah, terima pembayaran. Struk bisa dicetak atau dikirim ke pelanggan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Releases -->
+<section class="releases" id="changelog">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-tag">Changelog</div>
+            <h2>Riwayat Versi</h2>
+            <p>Setiap update membawa perbaikan dan fitur baru untuk pengalaman kasir yang lebih baik.</p>
+        </div>
+        <div class="rel-list" id="releasesList">
+            <div class="rel current reveal">
+                <div class="rel-top">
+                    <div class="rel-ver">
+                        <h3>v1.0.0</h3>
+                        <span class="tag tag-new">Terbaru</span>
+                    </div>
+                    <div class="rel-info">
+                        <span>📅 5 April 2026</span>
+                        <span>📦 61.8 MB</span>
+                    </div>
+                </div>
+                <ul class="rel-changes">
+                    <li>Manajemen Produk & Kategori lengkap</li>
+                    <li>Transaksi POS dengan mode offline-first</li>
+                    <li>Laporan harian & bulanan dengan grafik interaktif</li>
+                    <li>Cetak struk via Bluetooth & share sebagai gambar</li>
+                    <li>Fitur Pro: Multi-user dengan PIN, Sync ke Cloud</li>
+                    <li>Sistem langganan dengan Redeem Code</li>
+                    <li>Auto-update checker bawaan aplikasi</li>
+                </ul>
+                <a href="releases/v1.0.0/kkasir-v1.0.0.apk" download class="btn-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download v1.0.0
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2>Siap mengelola toko Anda?</h2>
+            <p>Download Kkasir sekarang dan rasakan kemudahan bertransaksi tanpa batas.</p>
+            <a href="releases/v1.0.0/kkasir-v1.0.0.apk" download class="btn btn-main">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-inner">
+        <p>&copy; 2026 Kkasir. Dibuat dengan ❤️ untuk UMKM Indonesia.</p>
+        <div class="footer-links">
+            <a href="#fitur">Fitur</a>
+            <a href="#changelog">Changelog</a>
+            <a href="mailto:support@kkasir.my.id">Kontak</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ─── Scroll Reveal ───
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── Dynamic version loader (overrides hardcoded data when hosted) ───
+(async () => {
+    try {
+        const r = await fetch('version.json?v=' + Date.now());
+        if (!r.ok) return;
+        const d = await r.json();
+        const latest = d.releases?.[0];
+        if (!latest) return;
+
+        // Update hero pill
+        document.querySelector('.hero-pill').innerHTML =
+            '<span class="dot"></span>v' + latest.version + ' — Tersedia sekarang';
+
+        // Update download links
+        const apkPath = 'releases/v' + latest.version + '/' + latest.apk_file;
+        document.querySelectorAll('a[download]').forEach(a => {
+            a.href = apkPath;
+            a.setAttribute('download', latest.apk_file);
+        });
+
+        // Update meta
+        document.querySelector('.hero-meta').innerHTML =
+            'Android 5.0+ <span>•</span> ' + latest.size_mb + ' MB <span>•</span> Gratis + Fitur Pro';
+
+        // Rebuild release list
+        if (d.releases.length > 0) {
+            const list = document.getElementById('releasesList');
+            list.innerHTML = d.releases.map((rel, i) => {
+                const changesHtml = rel.changes.map(c =>
+                    '<li>' + c.replace(/</g,'&lt;') + '</li>'
+                ).join('');
+                const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+                const dt = new Date(rel.date);
+                const dateStr = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+                return '<div class="rel ' + (i===0?'current ':'') + 'visible">' +
+                    '<div class="rel-top"><div class="rel-ver"><h3>v' + rel.version + '</h3>' +
+                    (i===0?'<span class="tag tag-new">Terbaru</span>':'') +
+                    '</div><div class="rel-info"><span>📅 '+dateStr+'</span><span>📦 '+rel.size_mb+' MB</span></div></div>' +
+                    '<ul class="rel-changes">' + changesHtml + '</ul>' +
+                    '<a href="releases/v'+rel.version+'/'+rel.apk_file+'" download="'+rel.apk_file+'" class="btn-sm">' +
+                    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+                    'Download v'+rel.version+'</a></div>';
+            }).join('');
+        }
+    } catch(e) { /* version.json not available, use hardcoded fallback */ }
+})();
+</script>
+</body>
+</html>

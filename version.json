@@ -1,0 +1,23 @@
+{
+  "latest_version": "1.0.0",
+  "min_version": "1.0.0",
+  "download_url": "/releases/v1.0.0/kkasir-v1.0.0.apk",
+  "changelog": "Rilis perdana Kkasir POS",
+  "release_date": "2026-04-05",
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-05",
+      "apk_file": "kkasir-v1.0.0.apk",
+      "size_mb": 61.8,
+      "changelog": "Rilis perdana Kkasir POS",
+      "changes": [
+        "Manajemen Produk & Kategori",
+        "Transaksi POS offline-first",
+        "Laporan Harian/Bulanan dengan grafik",
+        "Cetak struk Bluetooth & Share",
+        "Fitur Pro: Multi-user, Sync, Subscription"
+      ]
+    }
+  ]
+}
