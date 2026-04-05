@@ -1,39 +1,15 @@
 {
-  "latest_version": "1.1.2",
+  "latest_version": "1.2.2",
   "min_version": "1.0.0",
-  "download_url": "/releases/v1.1.2/kkasir-v1.1.2.apk",
-  "changelog": "Perbaikan fitur Multi-User, Update UI/UX & Cetak Struk",
+  "download_url": "releases/v1.2.2/kkasir-v1.2.2.apk",
+  "changelog": "Perbaikan bug PRO akun, update Mode Kasir Manual, dan Penambahan Tipe Produk Dinamis",
   "release_date": "2026-04-05",
-  "releases": [
-    {
-      "version": "1.1.2",
-      "date": "2026-04-05",
-      "apk_file": "kkasir-v1.1.2.apk",
-      "size_mb": 61.5,
-      "changelog": "Perbaikan fitur Multi-User, Update UI/UX & Cetak Struk",
-      "changes": [
-        "Desain UI Autentikasi baru bergaya fluid/glassmorphism",
-        "Alur Checkout baru (fluid payment) dengan sukses view",
-        "Perbaikan cetak struk dinamis sesuai pengaturan toko",
-        "Fitur Multi-User sekarang sudah berfungsi penuh",
-        "Grafik laporan lebih rapi dengan layout memudar",
-        "Pemeriksaan update otomatis via ikon notifikasi berjalan baik",
-        "Perbaikan berbagai bug minor dan peningkatan stabilitas"
-      ]
-    },
-    {
-      "version": "1.0.0",
-      "date": "2026-04-01",
-      "apk_file": "kkasir-v1.0.0.apk",
-      "size_mb": 61.8,
-      "changelog": "Rilis perdana Kkasir POS",
-      "changes": [
-        "Manajemen Produk & Kategori",
-        "Transaksi POS offline-first",
-        "Laporan Harian/Bulanan dengan grafik",
-        "Cetak struk Bluetooth & Share",
-        "Fitur Pro: Multi-user, Sync, Subscription"
-      ]
-    }
+  "size_mb": 61.5,
+  "changes": [
+    "Perbaikan bug di mana status PRO tetap aktif walau akun dihapus",
+    "Tipe Produk di form tidak lagi statis (bisa ditambah layaknya kategori)",
+    "Penambahan fitur 'Tambah Manual' (dadakan) di mode kasir",
+    "Penyederhanaan alur pendaftaran (tanpa halaman PIN)",
+    "Pembaruan database ke skema yang lebih efisien"
   ]
 }

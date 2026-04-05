@@ -301,59 +301,67 @@
 
         /* ─── Releases / Changelog ─── */
         .releases { padding: 80px 0; position: relative; z-index: 1; }
-        .rel-list { display: flex; flex-direction: column; }
+        .rel-list { 
+            display: flex; flex-direction: column; 
+            position: relative; padding-left: 12px; margin-top: 20px;
+        }
+        .rel-list::before {
+            content: ''; position: absolute; left: 0; top: 12px; bottom: 20px;
+            width: 2px; background: var(--border-2);
+        }
         .rel {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 32px;
-            padding: 40px 0;
-            border-bottom: 1px solid var(--border);
-            transition: border-color 0.3s;
+            position: relative;
+            padding: 0 0 40px 32px;
+            display: flex; flex-direction: column; gap: 16px;
         }
-        .rel:last-child {
-            border-bottom: none;
+        .rel::before {
+            content: ''; position: absolute; left: -5px; top: 10px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--text-3);
+            border: 3px solid var(--bg);
+            transition: all 0.3s;
         }
-        .rel:hover { border-color: rgba(255,255,255,0.12); }
+        .rel.current::before {
+            background: var(--accent-2);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
         
         .rel-meta {
-            display: flex; flex-direction: column; gap: 12px;
+            display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
         }
         .rel-ver { display: flex; align-items: center; gap: 10px; }
-        .rel-ver h3 { font-size: 22px; font-weight: 800; color: var(--text); }
+        .rel-ver h3 { font-size: 20px; font-weight: 700; color: var(--text); }
         .rel.current .rel-ver h3 { background: linear-gradient(135deg, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .tag {
             padding: 3px 10px; border-radius: 100px;
-            font-size: 10.5px; font-weight: 700;
+            font-size: 10px; font-weight: 700;
             text-transform: uppercase; letter-spacing: 0.06em;
             border: 1px solid transparent;
         }
         .tag-new { background: var(--green-bg); color: var(--green); border-color: rgba(52,211,153,0.3); }
         .rel-info {
-            display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-3); font-weight: 500;
+            display: flex; flex-direction: row; gap: 16px; font-size: 13px; color: var(--text-3); font-weight: 500;
         }
-        .rel-info span { display: flex; align-items: center; gap: 8px; }
+        .rel-info span { display: flex; align-items: center; gap: 6px; }
 
         .rel-content {
-            display: flex; flex-direction: column; gap: 24px;
+            display: flex; flex-direction: column; gap: 20px;
             align-items: flex-start;
         }
-        .rel-changes { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .rel-changes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
         .rel-changes li {
-            font-size: 14.5px; color: var(--text-2); line-height: 1.6;
+            font-size: 14px; color: var(--text-2); line-height: 1.5;
             display: flex; align-items: flex-start; gap: 12px;
         }
         .rel-changes li::before {
             content: ''; 
-            display: block; width: 6px; height: 6px; 
-            border-radius: 50%; background: var(--text-3); 
-            margin-top: 8px; flex-shrink: 0; transition: background 0.3s;
-        }
-        .rel.current .rel-changes li::before {
-            background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
+            display: block; width: 5px; height: 1px; 
+            background: var(--text-3); 
+            margin-top: 10px; flex-shrink: 0;
         }
         .btn-sm {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 24px;
+            padding: 8px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border-2);
             color: var(--text);
@@ -435,8 +443,9 @@
             .btn { width: 100%; max-width: 320px; justify-content: center; }
             .cta-box { padding: 40px 24px; }
             .footer-inner { justify-content: center; text-align: center; }
-            .rel { grid-template-columns: 1fr; gap: 20px; padding: 32px 0; }
-            .rel-info { flex-direction: row; gap: 16px; }
+            .rel { gap: 16px; padding: 0 0 32px 24px; }
+            .rel-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .rel-info { flex-direction: column; gap: 8px; }
         }
     </style>
     
@@ -505,9 +514,9 @@
         </a>
         <div class="nav-links">
             <a href="#fitur">Fitur</a>
-            <a href="#cara-kerja">Cara Kerja</a>
-            <a href="#changelog">Changelog</a>
-            <a href="#download" class="nav-cta">Download</a>
+            <a href="#panduan">Topologi</a>
+            <a href="#changelog">Apa yang Baru</a>
+        </div>    <a href="#download" class="nav-cta">Download</a>
         </div>
     </div>
 </nav>
@@ -515,14 +524,14 @@
 <!-- Hero -->
 <section class="hero" id="download">
     <div class="container">
-        <div class="hero-pill">
+        <div class="hero-pill reveal">
             <span class="dot"></span>
-            v1.1.2 — Tersedia sekarang
+            v1.2.2 — Tersedia sekarang
         </div>
-        <h1>Kelola Toko Anda<br>dengan <span class="grad">Kkasir</span></h1>
-        <p class="hero-desc">Aplikasi kasir (POS) offline-first yang dirancang khusus untuk UMKM Indonesia. Cepat, ringan, dan tetap berjalan tanpa internet.</p>
-        <div class="hero-actions">
-            <a href="releases/v1.1.2/kkasir-v1.1.2.apk" download class="btn btn-main" id="mainDownload">
+        <h1 class="reveal" data-delay="100">Solusi Kasir Sederhana untuk<br><span>UMKM Indonesia</span></h1>
+        <p class="hero-desc reveal" data-delay="200">Kelola produk, lacak penjualan, dan pantau bisnis Anda langsung dari genggaman tanpa perlu keahlian khusus.</p>
+        <div class="hero-cta reveal" data-delay="300">
+            <a href="releases/v1.2.2/kkasir-v1.2.2.apk" download="kkasir-v1.2.2.apk" class="btn btn-main" id="mainDownload">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download APK
             </a>
@@ -631,18 +640,18 @@
 <section class="releases" id="changelog">
     <div class="container">
         <div class="section-head">
-            <div class="section-tag">Changelog</div>
-            <h2>Riwayat Versi</h2>
-            <p>Setiap update membawa perbaikan dan fitur baru untuk pengalaman kasir yang lebih baik.</p>
+            <div class="section-tag">Update Terbaru</div>
+            <h2>Apa yang Baru</h2>
+            <p>Kkasir v1.2.2 hadir dengan berbagai fitur baru dan perbaikan.</p>
         </div>
         <div class="rel-list" id="releasesList">
-            <div class="rel current reveal">
+            <div class="rel current reveal visible">
                 <div class="rel-meta">
                     <div class="rel-ver">
-                        <h3>v1.1.2</h3>
+                        <h3 id="verTitle">v1.2.2</h3>
                         <span class="tag tag-new">Terbaru</span>
                     </div>
-                    <div class="rel-info">
+                    <div class="rel-info" id="verMeta">
                         <span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                             5 April 2026
@@ -654,16 +663,14 @@
                     </div>
                 </div>
                 <div class="rel-content">
-                    <ul class="rel-changes">
-                        <li>Desain UI Autentikasi baru bergaya fluid/glassmorphism</li>
-                        <li>Alur Checkout baru (fluid payment) dengan sukses view</li>
-                        <li>Perbaikan cetak struk dinamis sesuai pengaturan toko</li>
-                        <li>Fitur Multi-User sekarang sudah berfungsi penuh</li>
-                        <li>Grafik laporan lebih rapi dengan layout memudar</li>
-                        <li>Pemeriksaan update otomatis via ikon notifikasi berjalan baik</li>
-                        <li>Perbaikan berbagai bug minor dan peningkatan stabilitas</li>
+                    <ul class="rel-changes" id="verChanges">
+                        <li>Perbaikan bug di mana status PRO tetap aktif walau akun dihapus</li>
+                        <li>Tipe Produk di form tidak lagi statis (bisa ditambah layaknya kategori)</li>
+                        <li>Penambahan fitur 'Tambah Manual' (dadakan) di mode kasir</li>
+                        <li>Penyederhanaan alur pendaftaran (tanpa halaman PIN)</li>
+                        <li>Pembaruan database ke skema yang lebih efisien</li>
                     </ul>
-                    <a href="releases/v1.1.2/kkasir-v1.1.2.apk" download class="btn-sm">
+                    <a href="releases/v1.2.2/kkasir-v1.2.2.apk" download="kkasir-v1.2.2.apk" class="btn-sm">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download APK
                     </a>
@@ -679,7 +686,7 @@
         <div class="cta-box reveal">
             <h2>Siap mengelola toko Anda?</h2>
             <p>Download Kkasir sekarang dan rasakan kemudahan bertransaksi tanpa batas.</p>
-            <a href="releases/v1.1.2/kkasir-v1.1.2.apk" download class="btn btn-main">
+            <a href="releases/v1.2.2/kkasir-v1.2.2.apk" download="kkasir-v1.2.2.apk" class="btn btn-main">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download Sekarang
             </a>
@@ -693,7 +700,7 @@
         <p>&copy; 2026 Kkasir. Dibuat untuk UMKM Indonesia.</p>
         <div class="footer-links">
             <a href="#fitur">Fitur</a>
-            <a href="#changelog">Changelog</a>
+            <a href="#changelog">Apa yang Baru</a>
             <a href="mailto:support@kkasir.my.id">Kontak</a>
         </div>
     </div>
@@ -717,48 +724,33 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         const r = await fetch('version.json?v=' + Date.now());
         if (!r.ok) return;
         const d = await r.json();
-        const latest = d.releases?.[0];
-        if (!latest) return;
-
+        
         // Update hero pill
         document.querySelector('.hero-pill').innerHTML =
-            '<span class="dot"></span>v' + latest.version + ' — Tersedia sekarang';
-
-        // Update download links
-        const apkPath = 'releases/v' + latest.version + '/' + latest.apk_file;
-        document.querySelectorAll('a[download]').forEach(a => {
-            a.href = apkPath;
-            a.setAttribute('download', latest.apk_file);
-        });
+            '<span class="dot"></span>v' + d.latest_version + ' — Tersedia sekarang';
 
         // Update meta
         document.querySelector('.hero-meta').innerHTML =
-            'Android 8.0+ <span>•</span> ' + latest.size_mb + ' MB <span>•</span> Gratis + Fitur Pro';
+            'Android 8.0+ <span>•</span> ' + (d.size_mb || 61.5) + ' MB <span>•</span> Gratis + Fitur Pro';
 
-        // Rebuild release list
-        if (d.releases.length > 0) {
-            const list = document.getElementById('releasesList');
-            list.innerHTML = d.releases.map((rel, i) => {
-                const changesHtml = rel.changes.map(c =>
-                    '<li>' + c.replace(/</g,'&lt;') + '</li>'
-                ).join('');
-                const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
-                const dt = new Date(rel.date);
-                const dateStr = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
-                return '<div class="rel ' + (i===0?'current ':'') + 'visible">' +
-                    '<div class="rel-meta"><div class="rel-ver"><h3>v' + rel.version + '</h3>' +
-                    (i===0?'<span class="tag tag-new">Terbaru</span>':'') +
-                    '</div><div class="rel-info">' +
-                    '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ' + dateStr + '</span>' +
-                    '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> ' + rel.size_mb + ' MB</span>' +
-                    '</div></div>' +
-                    '<div class="rel-content"><ul class="rel-changes">' + changesHtml + '</ul>' +
-                    '<a href="releases/v'+rel.version+'/'+rel.apk_file+'" download="'+rel.apk_file+'" class="btn-sm">' +
-                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-                    'Download APK</a></div></div>';
-            }).join('');
+        // Update What's New section
+        document.getElementById('verTitle').innerText = 'v' + d.latest_version;
+        
+        const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+        const dt = new Date(d.release_date);
+        const dateStr = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+        
+        document.getElementById('verMeta').innerHTML = 
+            '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ' + dateStr + '</span>' +
+            '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> ' + (d.size_mb || 61.5) + ' MB</span>';
+
+        if (d.changes && d.changes.length > 0) {
+            const changesList = document.getElementById('verChanges');
+            changesList.innerHTML = d.changes.map(c => 
+                '<li>' + c.replace(/</g,'&lt;') + '</li>'
+            ).join('');
         }
-    } catch(e) { /* version.json not available, use hardcoded fallback */ }
+    } catch(e) { /* fallback to hardcoded html values */ }
 })();
 </script>
 </body>
