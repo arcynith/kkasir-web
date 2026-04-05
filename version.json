@@ -1,14 +1,19 @@
 {
-  "latest_version": "1.2.6",
+  "latest_version": "2.2.5",
   "min_version": "1.0.0",
-  "download_url": "releases/v1.2.6/kkasir-v1.2.6.apk",
-  "changelog": "Perbaikan profil toko setelah relogin, Tombol Cepat Pengeluaran untuk Kasir, dan Opsi Tipe Produk",
-  "release_date": "2026-04-05",
-  "size_mb": 61.5,
-  "changes": [
-    "Perbaikan profil toko yang kosong setelah relogin",
-    "Tambah Tombol Cepat Pengeluaran untuk peran Kasir",
-    "Pengaturan Tipe Produk yang lebih terintegrasi",
-    "Menghilangkan fitur download laporan sementara"
+  "releases": [
+    {
+      "version": "2.2.5",
+      "apk_file": "kkasir-v2.2.5.apk",
+      "changelog": "Perbaikan responsivitas UI, Sync Engine yang lebih tangguh, dan Paksaan Update Major",
+      "release_date": "2026-04-05",
+      "size_mb": 61.5,
+      "changes": [
+        "Major Update - Versi 2.2.5",
+        "Pemaksaan update jika ada versi baru",
+        "Sync Engine kini lebih handal dengan Exponential Backoff",
+        "Responsive Grid UI untuk Kasir dan Pembayaran"
+      ]
+    }
   ]
 }
