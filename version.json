@@ -1,10 +1,10 @@
 {
-  "latest_version": "2.2.5",
+  "latest_version": "2.5.6",
   "min_version": "1.0.0",
   "releases": [
     {
-      "version": "2.2.5",
-      "apk_file": "kkasir-v2.2.5.apk",
+      "version": "2.5.6",
+      "apk_file": "kkasir-v2.5.6.apk",
       "changelog": "Perbaikan responsivitas UI, Sync Engine yang lebih tangguh, dan Paksaan Update Major",
       "release_date": "2026-04-05",
       "size_mb": 61.5,
