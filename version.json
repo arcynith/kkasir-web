@@ -1,15 +1,14 @@
 {
-  "latest_version": "1.2.5",
+  "latest_version": "1.2.6",
   "min_version": "1.0.0",
-  "download_url": "releases/v1.2.5/kkasir-v1.2.5.apk",
-  "changelog": "Perbaikan bug PRO akun, update Mode Kasir Manual, dan Penambahan Tipe Produk Dinamis",
+  "download_url": "releases/v1.2.6/kkasir-v1.2.6.apk",
+  "changelog": "Perbaikan profil toko setelah relogin, Tombol Cepat Pengeluaran untuk Kasir, dan Opsi Tipe Produk",
   "release_date": "2026-04-05",
   "size_mb": 61.5,
   "changes": [
-    "Perbaikan bug di mana status PRO tetap aktif walau akun dihapus",
-    "Tipe Produk di form tidak lagi statis (bisa ditambah layaknya kategori)",
-    "Penambahan fitur 'Tambah Manual' (dadakan) di mode kasir",
-    "Penyederhanaan alur pendaftaran (tanpa halaman PIN)",
-    "Pembaruan database ke skema yang lebih efisien"
+    "Perbaikan profil toko yang kosong setelah relogin",
+    "Tambah Tombol Cepat Pengeluaran untuk peran Kasir",
+    "Pengaturan Tipe Produk yang lebih terintegrasi",
+    "Menghilangkan fitur download laporan sementara"
   ]
 }
