@@ -1,13 +1,29 @@
 {
-  "latest_version": "1.0.0",
+  "latest_version": "1.1.2",
   "min_version": "1.0.0",
-  "download_url": "/releases/v1.0.0/kkasir-v1.0.0.apk",
-  "changelog": "Rilis perdana Kkasir POS",
+  "download_url": "/releases/v1.1.2/kkasir-v1.1.2.apk",
+  "changelog": "Perbaikan fitur Multi-User, Update UI/UX & Cetak Struk",
   "release_date": "2026-04-05",
   "releases": [
     {
-      "version": "1.0.0",
+      "version": "1.1.2",
       "date": "2026-04-05",
+      "apk_file": "kkasir-v1.1.2.apk",
+      "size_mb": 61.5,
+      "changelog": "Perbaikan fitur Multi-User, Update UI/UX & Cetak Struk",
+      "changes": [
+        "Desain UI Autentikasi baru bergaya fluid/glassmorphism",
+        "Alur Checkout baru (fluid payment) dengan sukses view",
+        "Perbaikan cetak struk dinamis sesuai pengaturan toko",
+        "Fitur Multi-User sekarang sudah berfungsi penuh",
+        "Grafik laporan lebih rapi dengan layout memudar",
+        "Pemeriksaan update otomatis via ikon notifikasi berjalan baik",
+        "Perbaikan berbagai bug minor dan peningkatan stabilitas"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-04-01",
       "apk_file": "kkasir-v1.0.0.apk",
       "size_mb": 61.8,
       "changelog": "Rilis perdana Kkasir POS",
