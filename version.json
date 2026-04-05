@@ -1,7 +1,7 @@
 {
-  "latest_version": "1.2.2",
+  "latest_version": "1.2.5",
   "min_version": "1.0.0",
-  "download_url": "releases/v1.2.2/kkasir-v1.2.2.apk",
+  "download_url": "releases/v1.2.5/kkasir-v1.2.5.apk",
   "changelog": "Perbaikan bug PRO akun, update Mode Kasir Manual, dan Penambahan Tipe Produk Dinamis",
   "release_date": "2026-04-05",
   "size_mb": 61.5,
