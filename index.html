@@ -665,7 +665,7 @@
                         <li>Penyederhanaan alur pendaftaran (tanpa halaman PIN)</li>
                         <li>Pembaruan database ke skema yang lebih efisien</li>
                     </ul>
-                    <a href="releases/v1.2.6/kkasir-v1.2.6.apk" download="kkasir-v1.2.6.apk" class="btn-sm">
+                    <a href="releases/v2.5.6/kkasir-v2.5.6.apk" download="kkasir-v2.5.6.apk" class="btn-sm dl-base-link">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download APK
                     </a>
@@ -681,7 +681,7 @@
         <div class="cta-box reveal">
             <h2>Siap mengelola toko Anda?</h2>
             <p>Download Kkasir sekarang dan rasakan kemudahan bertransaksi tanpa batas.</p>
-            <a href="releases/v2.5.6/kkasir-v2.5.6.apk" download="kkasir-v2.5.6.apk" class="btn btn-main">
+            <a href="releases/v2.5.6/kkasir-v2.5.6.apk" download="kkasir-v2.5.6.apk" class="btn btn-main dl-main-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download Sekarang
             </a>
@@ -744,6 +744,13 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
                 '<li>' + c.replace(/</g,'&lt;') + '</li>'
             ).join('');
         }
+        
+        // Dynamically update download links
+        const apkUrl = 'releases/v' + d.latest_version + '/' + (d.releases[0].apk_file || ('kkasir-v' + d.latest_version + '.apk'));
+        document.querySelectorAll('.dl-base-link, .dl-main-link').forEach(btn => {
+            btn.href = apkUrl;
+            btn.download = apkUrl.split('/').pop();
+        });
     } catch(e) { /* fallback to hardcoded html values */ }
 })();
 </script>
