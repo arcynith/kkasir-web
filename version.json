@@ -1,7 +1,20 @@
 {
-  "latest_version": "2.5.6",
+  "latest_version": "2.6.7",
   "min_version": "1.0.0",
   "releases": [
+    {
+      "version": "2.6.7",
+      "apk_file": "kkasir-v2.6.7.apk",
+      "changelog": "Multi-user Pro dengan auto-cleanup grace period & fitur ekspor CSV Laporan.",
+      "release_date": "2026-04-05",
+      "size_mb": 62.0,
+      "changes": [
+        "Major Update - Versi 2.6.7",
+        "Backup cloud harian kini mencakup akun staf kasir",
+        "Pembersihan otomatis akun staf jika PRO kedaluwarsa lebih dari 4 hari",
+        "Ekspor CSV untuk Laporan Penjualan dan Pengeluaran"
+      ]
+    },
     {
       "version": "2.5.6",
       "apk_file": "kkasir-v2.5.6.apk",
