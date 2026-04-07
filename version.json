@@ -1,7 +1,19 @@
 {
-  "latest_version": "2.6.10",
+  "latest_version": "2.6.11",
   "min_version": "1.0.0",
   "releases": [
+    {
+      "version": "2.6.11",
+      "apk_file": "kkasir-v2.6.11.apk",
+      "changelog": "Perbaikan akun staff (Kasir & Owner) tidak bisa disinkronisasi ke device lain, dan perbaikan instalasi update.",
+      "release_date": "2026-04-07",
+      "size_mb": 63.8,
+      "changes": [
+        "Fix - Versi 2.6.11",
+        "Aplikasi tidak akan meredownload APK update jika instalasi sebelumnya dibatalkan.",
+        "Perbaikan masalah bug data akun staff (Kasir & Owner) hanya tersimpan offline dan tidak terkirim ke device lainnya."
+      ]
+    },
     {
       "version": "2.6.10",
       "apk_file": "kkasir-v2.6.10.apk",
