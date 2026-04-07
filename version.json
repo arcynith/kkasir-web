@@ -1,7 +1,20 @@
 {
-  "latest_version": "2.6.8",
+  "latest_version": "2.6.9",
   "min_version": "1.0.0",
   "releases": [
+    {
+      "version": "2.6.9",
+      "apk_file": "kkasir-v2.6.9.apk",
+      "changelog": "Perbaikan Sinkronisasi Multi-Device, Auto-Login Kasir, dan In-App Installer.",
+      "release_date": "2026-04-07",
+      "size_mb": 63.8,
+      "changes": [
+        "Major Update - Versi 2.6.9",
+        "Perbaikan masalah data tidak sinkron setelah device pertama kali dibuka.",
+        "Aplikasi sekarang secara otomatis mendownload dan menginstal update.",
+        "Fitur Auto-Login: Kasir langsung masuk tanpa PIN agar lebih cepat."
+      ]
+    },
     {
       "version": "2.6.8",
       "apk_file": "kkasir-v2.6.8.apk",
@@ -11,22 +24,8 @@
       "changes": [
         "Major Update - Versi 2.6.8",
         "Perbaikan tampilan keranjang untuk harga dengan digit yang panjang (Anti-Overflow).",
-        "Pembaruan filter tipe produk Offline/Online (menghilangkan centang ikon yang mengganggu).",
-        "Sistem Multi-User Kasir/Admin berjalan dengan lancar.",
-        "Pemindahan basis rujukan versi ke aplikasi web."
-      ]
-    },
-    {
-      "version": "2.6.7",
-      "apk_file": "kkasir-v2.6.7.apk",
-      "changelog": "Multi-user Pro dengan auto-cleanup grace period & fitur ekspor CSV Laporan.",
-      "release_date": "2026-04-05",
-      "size_mb": 62.0,
-      "changes": [
-        "Major Update - Versi 2.6.7",
-        "Backup cloud harian kini mencakup akun staf kasir",
-        "Pembersihan otomatis akun staf jika PRO kedaluwarsa",
-        "Ekspor CSV untuk Laporan Penjualan dan Pengeluaran"
+        "Pembaruan filter tipe produk Offline/Online.",
+        "Sistem Multi-User Kasir/Admin berjalan dengan lancar."
       ]
     }
   ]
