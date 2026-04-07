@@ -8,7 +8,7 @@
     <meta name="keywords" content="kasir, POS, aplikasi kasir, UMKM, point of sale, android, offline, aplikasi toko">
     <meta name="author" content="Kkasir Team">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#8b5cf6">
+    <meta name="theme-color" content="#7c3aed">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -16,7 +16,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/logo_kkasir.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/logo_kkasir.png">
-    <link rel="mask-icon" href="/logo_kkasir.png" color="#8b5cf6">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -24,9 +23,6 @@
     <meta property="og:title" content="Kkasir — Aplikasi Kasir POS Sederhana untuk UMKM">
     <meta property="og:description" content="Download Kkasir, aplikasi kasir (POS) offline-first untuk Android. Gratis, cepat, dan mudah digunakan untuk semua jenis usaha.">
     <meta property="og:image" content="https://kkasir.my.id/logo_kkasir.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -39,414 +35,385 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* ═══════════════════════════════════════════════════
-           KKASIR — Premium Landing Page
-           ═══════════════════════════════════════════════════ */
+        /* ═══════════════════════════════
+           KKASIR — Modern Minimal Design
+           ═══════════════════════════════ */
         :root {
-            --bg: #06060a;
-            --bg-card: #111118;
-            --bg-card-2: #16161f;
-            --bg-hover: #1c1c28;
-            --surface: #0d0d14;
-            --text: #f0f0f5;
-            --text-2: #a0a0b8;
-            --text-3: #6b6b82;
-            --accent: #8b5cf6;
-            --accent-2: #a78bfa;
-            --accent-3: #c4b5fd;
-            --accent-glow: rgba(139, 92, 246, 0.15);
-            --accent-glow-2: rgba(139, 92, 246, 0.08);
-            --green: #34d399;
-            --green-bg: rgba(52, 211, 153, 0.1);
-            --orange: #fb923c;
-            --orange-bg: rgba(251, 146, 60, 0.1);
-            --blue: #60a5fa;
-            --blue-bg: rgba(96, 165, 250, 0.1);
-            --border: rgba(255, 255, 255, 0.05);
-            --border-2: rgba(255, 255, 255, 0.08);
-            --r: 20px;
-            --r-sm: 14px;
-            --r-xs: 8px;
+            --bg: #09090b;
+            --bg-subtle: #111113;
+            --surface: #18181b;
+            --surface-2: #1e1e22;
+            --surface-hover: #27272a;
+            --text: #fafafa;
+            --text-2: #a1a1aa;
+            --text-3: #52525b;
+            --accent: #7c3aed;
+            --accent-light: #a78bfa;
+            --accent-glow: rgba(124, 58, 237, 0.15);
+            --accent-glow-strong: rgba(124, 58, 237, 0.25);
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.1);
+            --radius: 16px;
+            --radius-sm: 12px;
+            --green: #22c55e;
+            --blue: #3b82f6;
+            --amber: #f59e0b;
         }
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
         a { color: inherit; text-decoration: none; }
-
-        /* ─── Ambient Background ─── */
-        .ambient {
-            position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+        
+        /* ─── Glow Background ─── */
+        .glow-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
         }
-        .ambient .orb {
+        .glow-bg::before {
+            content: '';
             position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-            animation: orbFloat 20s ease-in-out infinite alternate;
+            width: 600px; height: 600px;
+            top: -200px; left: 50%; transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
+            animation: glowPulse 8s ease-in-out infinite;
         }
-        .ambient .orb-1 {
-            width: 500px; height: 500px;
-            background: rgba(139,92,246,0.12);
-            top: -100px; left: -100px;
-        }
-        .ambient .orb-2 {
+        .glow-bg::after {
+            content: '';
+            position: absolute;
             width: 400px; height: 400px;
-            background: rgba(96,165,250,0.08);
-            top: 40%; right: -150px;
-            animation-delay: -8s;
+            bottom: 10%; right: -100px;
+            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+            animation: glowPulse 12s ease-in-out infinite reverse;
         }
-        .ambient .orb-3 {
-            width: 350px; height: 350px;
-            background: rgba(168,85,247,0.06);
-            bottom: -50px; left: 30%;
-            animation-delay: -14s;
-        }
-        @keyframes orbFloat {
-            0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(40px, -30px) scale(1.1); }
-            100% { transform: translate(-20px, 20px) scale(0.95); }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.15); }
         }
 
-        /* ─── Nav ─── */
-        nav {
+        /* ─── Navbar ─── */
+        .navbar {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(6,6,10,0.72);
-            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            background: rgba(9,9,11,0.8);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
         }
-        .nav-inner {
+        .navbar-inner {
             display: flex; align-items: center; justify-content: space-between;
-            height: 60px;
+            height: 56px;
         }
-        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
-        .logo-mark {
-            width: 32px; height: 32px;
-            background: linear-gradient(135deg, var(--accent), #7c3aed);
-            border-radius: 9px;
+        .brand {
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 800; font-size: 16px; letter-spacing: -0.02em;
+        }
+        .brand-icon {
+            width: 30px; height: 30px; border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), #6d28d9);
             display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 15px; color: #fff;
-            box-shadow: 0 2px 12px var(--accent-glow);
+            font-size: 14px; font-weight: 900; color: #fff;
+            box-shadow: 0 0 16px var(--accent-glow);
         }
-        .nav-links { display: flex; gap: 24px; align-items: center; }
-        .nav-links a {
-            font-size: 13.5px; font-weight: 500; color: var(--text-2);
-            transition: color 0.2s;
+        .nav-right { display: flex; align-items: center; gap: 6px; }
+        .nav-link {
+            padding: 6px 14px; border-radius: 8px;
+            font-size: 13px; font-weight: 500; color: var(--text-2);
+            transition: all 0.2s;
         }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta {
-            padding: 8px 18px !important;
-            background: var(--accent) !important;
-            color: #fff !important;
-            border-radius: 10px !important;
-            font-weight: 600 !important;
-            font-size: 13px !important;
-            transition: all 0.25s !important;
+        .nav-link:hover { color: var(--text); background: var(--surface); }
+        .nav-dl {
+            padding: 7px 16px; border-radius: 8px;
+            font-size: 13px; font-weight: 600; color: #fff;
+            background: var(--accent);
+            transition: all 0.2s; margin-left: 4px;
         }
-        .nav-cta:hover { background: var(--accent-2) !important; transform: translateY(-1px); }
+        .nav-dl:hover { background: var(--accent-light); }
 
+        /* ─── Hero ─── */
         .hero {
-            padding: 180px 0 100px;
+            padding: 140px 0 80px;
             text-align: center;
             position: relative; z-index: 1;
         }
-        .hero-pill {
+        .badge {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 7px 18px 7px 8px;
-            background: var(--accent-glow-2);
-            border: 1px solid rgba(139,92,246,0.15);
+            padding: 5px 14px 5px 6px;
+            background: var(--surface);
+            border: 1px solid var(--border-hover);
             border-radius: 100px;
-            font-size: 13px; font-weight: 600; color: var(--accent-2);
-            margin-bottom: 32px;
-            animation: fadeUp .7s ease;
+            font-size: 12px; font-weight: 600; color: var(--accent-light);
+            margin-bottom: 28px;
         }
-        .hero-pill .dot {
-            width: 8px; height: 8px; border-radius: 50%; background: var(--green);
-            box-shadow: 0 0 8px var(--green);
-            animation: pulse 2s infinite;
+        .badge-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 6px var(--green);
+            animation: blink 2s infinite;
         }
-        @keyframes pulse {
-            0%,100% { opacity: 1; } 50% { opacity: .4; }
-        }
+        @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+
         .hero h1 {
-            font-size: clamp(38px, 5.5vw, 64px);
-            font-weight: 900; line-height: 1.08;
-            letter-spacing: -0.035em;
-            margin-bottom: 20px;
-            animation: fadeUp .7s ease .1s both;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900; line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
         }
-        .grad {
-            background: linear-gradient(135deg, var(--accent-2), #e879f9, var(--accent));
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--accent-light), #c084fc, var(--accent));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .hero-desc {
-            font-size: 16.5px; color: var(--text-2); max-width: 500px;
-            margin: 0 auto 40px; line-height: 1.7;
-            animation: fadeUp .7s ease .2s both;
+        .hero-sub {
+            font-size: 16px; color: var(--text-2);
+            max-width: 420px; margin: 0 auto 36px;
+            line-height: 1.7;
         }
-        .hero-actions {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 14px; margin-bottom: 16px;
-            animation: fadeUp .7s ease .3s both;
-        }
-        .btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 15px 32px; border-radius: 14px;
-            font-weight: 700; font-size: 15px;
-            transition: all 0.3s ease; border: none; cursor: pointer;
-        }
-        .btn-main {
-            background: linear-gradient(135deg, #7c3aed, var(--accent));
-            color: #fff;
-            box-shadow: 0 4px 28px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.1);
-        }
-        .btn-main:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 40px rgba(139,92,246,0.3);
-        }
-        .btn-main svg { flex-shrink: 0; }
-        .btn-ghost {
-            background: var(--bg-card);
-            color: var(--text-2);
-            border: 1px solid var(--border-2);
-        }
-        .btn-ghost:hover { background: var(--bg-hover); color: var(--text); border-color: rgba(255,255,255,0.12); }
-        .hero-meta {
-            font-size: 13px; color: var(--text-3);
-            animation: fadeUp .7s ease .4s both;
-        }
-        .hero-meta span { margin: 0 6px; }
-
-        .stats {
-            padding: 20px 0 100px; position: relative; z-index: 1;
-            animation: fadeUp .7s ease .5s both;
-        }
-        .stats-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-            background: var(--border);
-            border-radius: var(--r); overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .stat {
-            background: var(--bg-card); padding: 28px 20px; text-align: center;
-        }
-        .stat-val { font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-        .stat-lbl { font-size: 12.5px; color: var(--text-3); font-weight: 500; }
-
-        /* ─── Features ─── */
-        .features { padding: 100px 0; position: relative; z-index: 1; }
-        .section-tag {
-            display: inline-flex; padding: 6px 14px;
-            background: var(--accent-glow-2);
-            border: 1px solid rgba(139,92,246,0.12);
-            border-radius: 100px;
-            font-size: 12px; font-weight: 700; color: var(--accent-2);
-            text-transform: uppercase; letter-spacing: 0.08em;
-            margin-bottom: 16px;
-        }
-        .section-head { text-align: center; margin-bottom: 52px; }
-        .section-head h2 {
-            font-size: clamp(28px, 3.5vw, 40px); font-weight: 800;
-            letter-spacing: -0.02em; margin-bottom: 12px;
-        }
-        .section-head p { font-size: 15px; color: var(--text-2); max-width: 480px; margin: 0 auto; }
-        .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-        .feat {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--r); padding: 30px 26px;
-            transition: all 0.35s ease;
-        }
-        .feat:hover { background: var(--bg-hover); border-color: var(--border-2); transform: translateY(-4px); }
-        .feat-ic {
-            width: 48px; height: 48px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; margin-bottom: 18px;
-        }
-        .feat-ic.purple { background: var(--accent-glow); }
-        .feat-ic.green { background: var(--green-bg); }
-        .feat-ic.orange { background: var(--orange-bg); }
-        .feat-ic.blue { background: var(--blue-bg); }
-        .feat h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
-        .feat p { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
-
-        /* ─── How It Works ─── */
-        .how { padding: 100px 0; position: relative; z-index: 1; }
-        .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-        .step {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--r); padding: 32px 28px;
-            position: relative; overflow: hidden;
-        }
-        .step::before {
-            content: attr(data-num);
-            position: absolute; top: -8px; right: 16px;
-            font-size: 80px; font-weight: 900; color: rgba(139,92,246,0.06);
-            line-height: 1;
-        }
-        .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .step p { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
-        .step-connector {
-            display: none; /* shown between steps on desktop */
-        }
-
-        /* ─── Releases / Changelog ─── */
-        .releases { padding: 100px 0; position: relative; z-index: 1; }
-        .rel-list { 
-            display: flex; flex-direction: column; 
-            position: relative; padding-left: 12px; margin-top: 20px;
-        }
-        .rel-list::before {
-            content: ''; position: absolute; left: 0; top: 12px; bottom: 20px;
-            width: 2px; background: var(--border-2);
-        }
-        .rel {
-            position: relative;
-            padding: 0 0 40px 32px;
-            display: flex; flex-direction: column; gap: 16px;
-        }
-        .rel::before {
-            content: ''; position: absolute; left: -5px; top: 10px;
-            width: 12px; height: 12px; border-radius: 50%;
-            background: var(--text-3);
-            border: 3px solid var(--bg);
-            transition: all 0.3s;
-        }
-        .rel.current::before {
-            background: var(--accent-2);
-            box-shadow: 0 0 12px var(--accent-glow);
-        }
-        
-        .rel-meta {
-            display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-        }
-        .rel-ver { display: flex; align-items: center; gap: 10px; }
-        .rel-ver h3 { font-size: 20px; font-weight: 700; color: var(--text); }
-        .rel.current .rel-ver h3 { background: linear-gradient(135deg, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tag {
-            padding: 3px 10px; border-radius: 100px;
-            font-size: 10px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.06em;
-            border: 1px solid transparent;
-        }
-        .tag-new { background: var(--green-bg); color: var(--green); border-color: rgba(52,211,153,0.3); }
-        .rel-info {
-            display: flex; flex-direction: row; gap: 16px; font-size: 13px; color: var(--text-3); font-weight: 500;
-        }
-        .rel-info span { display: flex; align-items: center; gap: 6px; }
-
-        .rel-content {
-            display: flex; flex-direction: column; gap: 20px;
-            align-items: flex-start;
-        }
-        .rel-changes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .rel-changes li {
-            font-size: 14px; color: var(--text-2); line-height: 1.5;
-            display: flex; align-items: flex-start; gap: 12px;
-        }
-        .rel-changes li::before {
-            content: ''; 
-            display: block; width: 5px; height: 1px; 
-            background: var(--text-3); 
-            margin-top: 10px; flex-shrink: 0;
-        }
-        .btn-sm {
+        .hero-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+        .btn-primary {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-2);
-            color: var(--text);
-            border-radius: var(--r-sm);
-            font-size: 13px; font-weight: 600;
+            padding: 14px 28px; border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--accent), #6d28d9);
+            color: #fff; font-weight: 700; font-size: 14px;
+            border: none; cursor: pointer;
+            box-shadow: 0 4px 24px var(--accent-glow);
             transition: all 0.25s;
         }
-        .btn-sm:hover { background: var(--bg-hover); border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
-        .rel.current .btn-sm {
-            background: var(--accent-glow-2);
-            border-color: rgba(139,92,246,0.25);
-            color: var(--accent-2);
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--accent-glow-strong); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: var(--radius-sm);
+            background: var(--surface);
+            color: var(--text-2); font-weight: 600; font-size: 14px;
+            border: 1px solid var(--border-hover);
+            cursor: pointer; transition: all 0.25s;
         }
-        .rel.current .btn-sm:hover { background: var(--accent-glow); }
+        .btn-secondary:hover { color: var(--text); background: var(--surface-2); border-color: rgba(255,255,255,0.15); }
+        .hero-note {
+            font-size: 12px; color: var(--text-3); font-weight: 500;
+        }
+        .hero-note span { margin: 0 5px; opacity: 0.5; }
 
-        .cta-section {
-            padding: 100px 0 120px; position: relative; z-index: 1;
+        /* ─── Metrics Row ─── */
+        .metrics {
+            padding: 0 0 80px; position: relative; z-index: 1;
         }
-        .cta-box {
-            background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(96,165,250,0.04));
-            border: 1px solid rgba(139,92,246,0.15);
-            border-radius: 28px; padding: 60px 40px;
-            text-align: center; position: relative; overflow: hidden;
+        .metrics-row {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            border: 1px solid var(--border); border-radius: var(--radius);
+            overflow: hidden;
         }
-        .cta-box::before {
-            content: '';
-            position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
-            pointer-events: none;
+        .metric {
+            padding: 24px 16px; text-align: center;
+            border-right: 1px solid var(--border);
+            background: var(--bg-subtle);
         }
-        .cta-box h2 {
-            font-size: clamp(24px, 3vw, 36px); font-weight: 800;
-            letter-spacing: -0.02em; margin-bottom: 12px;
+        .metric:last-child { border-right: none; }
+        .metric-val { font-size: 24px; font-weight: 800; margin-bottom: 2px; }
+        .metric-lbl { font-size: 11px; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
+        /* ─── Features ─── */
+        .features { padding: 80px 0; position: relative; z-index: 1; }
+        .section-label {
+            font-size: 11px; font-weight: 700; color: var(--accent-light);
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(24px, 3vw, 34px); font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 8px;
+        }
+        .section-sub { font-size: 14px; color: var(--text-2); max-width: 380px; }
+        .section-header { margin-bottom: 40px; }
+        .section-header.center { text-align: center; }
+        .section-header.center .section-sub { margin: 0 auto; }
+
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+        }
+        .feature-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .feature-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+        .feature-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; margin-bottom: 16px;
+        }
+        .fi-purple { background: var(--accent-glow); }
+        .fi-green { background: rgba(34,197,94,0.12); }
+        .fi-blue { background: rgba(59,130,246,0.12); }
+        .fi-amber { background: rgba(245,158,11,0.12); }
+        .feature-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+        /* ─── Steps ─── */
+        .steps-section { padding: 80px 0; position: relative; z-index: 1; }
+        .steps-list {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+        }
+        .step-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
             position: relative;
         }
-        .cta-box p {
-            font-size: 15px; color: var(--text-2); max-width: 440px;
-            margin: 0 auto 32px; position: relative;
+        .step-num {
+            font-size: 48px; font-weight: 900;
+            background: linear-gradient(180deg, rgba(124,58,237,0.15) 0%, transparent 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1; margin-bottom: 16px;
         }
-        .cta-box .btn { position: relative; }
+        .step-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        .step-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+        /* ─── Changelog ─── */
+        .changelog { padding: 80px 0; position: relative; z-index: 1; }
+        .release-list { display: flex; flex-direction: column; gap: 12px; }
+        .release-item {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+        .release-item:hover { border-color: var(--border-hover); }
+        .release-item.latest { border-color: rgba(124,58,237,0.3); }
+        .release-header {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 10px; margin-bottom: 14px;
+        }
+        .release-title {
+            display: flex; align-items: center; gap: 10px;
+        }
+        .release-title h3 { font-size: 16px; font-weight: 700; }
+        .tag-latest {
+            padding: 2px 8px; border-radius: 6px;
+            background: rgba(34,197,94,0.12);
+            color: var(--green);
+            font-size: 10px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .release-date { font-size: 12px; color: var(--text-3); font-weight: 500; }
+        .release-changes {
+            list-style: none; display: flex; flex-direction: column; gap: 6px;
+            margin-bottom: 16px;
+        }
+        .release-changes li {
+            font-size: 13px; color: var(--text-2); line-height: 1.5;
+            padding-left: 16px; position: relative;
+        }
+        .release-changes li::before {
+            content: '';
+            position: absolute; left: 0; top: 9px;
+            width: 4px; height: 4px; border-radius: 50%;
+            background: var(--text-3);
+        }
+        .release-item.latest .release-changes li::before {
+            background: var(--accent-light);
+        }
+        .dl-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 8px;
+            font-size: 12px; font-weight: 600;
+            transition: all 0.2s;
+        }
+        .dl-btn-accent {
+            background: var(--accent-glow);
+            color: var(--accent-light);
+            border: 1px solid rgba(124,58,237,0.2);
+        }
+        .dl-btn-accent:hover { background: var(--accent-glow-strong); }
+        .dl-btn-ghost {
+            background: var(--surface);
+            color: var(--text-2);
+            border: 1px solid var(--border);
+        }
+        .dl-btn-ghost:hover { color: var(--text); background: var(--surface-2); }
+
+        /* ─── CTA ─── */
+        .cta { padding: 60px 0 100px; position: relative; z-index: 1; }
+        .cta-card {
+            background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(59,130,246,0.04));
+            border: 1px solid rgba(124,58,237,0.12);
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        .cta-card h2 {
+            font-size: clamp(22px, 3vw, 30px); font-weight: 800;
+            letter-spacing: -0.02em; margin-bottom: 10px;
+        }
+        .cta-card p {
+            font-size: 14px; color: var(--text-2);
+            max-width: 360px; margin: 0 auto 28px;
+        }
 
         /* ─── Footer ─── */
-        footer {
+        .site-footer {
             border-top: 1px solid var(--border);
-            padding: 28px 0; position: relative; z-index: 1;
+            padding: 20px 0; position: relative; z-index: 1;
         }
         .footer-inner {
             display: flex; align-items: center; justify-content: space-between;
-            flex-wrap: wrap; gap: 12px;
         }
-        .footer-inner p { font-size: 12.5px; color: var(--text-3); }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 12.5px; color: var(--text-3); transition: color .2s; }
+        .footer-inner p { font-size: 12px; color: var(--text-3); }
+        .footer-links { display: flex; gap: 16px; }
+        .footer-links a { font-size: 12px; color: var(--text-3); transition: color .2s; }
         .footer-links a:hover { color: var(--text-2); }
 
         /* ─── Animations ─── */
-        @keyframes fadeUp {
-            from { opacity:0; transform: translateY(18px); }
-            to { opacity:1; transform: translateY(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .reveal {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .anim { opacity: 0; transform: translateY(16px); transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .anim.show { opacity: 1; transform: translateY(0); }
+        .hero .badge { animation: fadeIn 0.6s ease both; }
+        .hero h1 { animation: fadeIn 0.6s ease 0.1s both; }
+        .hero-sub { animation: fadeIn 0.6s ease 0.2s both; }
+        .hero-cta { animation: fadeIn 0.6s ease 0.3s both; }
+        .hero-note { animation: fadeIn 0.6s ease 0.35s both; }
 
         /* ─── Responsive ─── */
-        @media (max-width: 900px) {
-            .feat-grid, .steps { grid-template-columns: 1fr 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 768px) {
+            .feature-grid, .steps-list { grid-template-columns: 1fr; }
+            .metrics-row { grid-template-columns: repeat(2, 1fr); }
+            .metric:nth-child(2) { border-right: none; }
+            .metric:nth-child(1), .metric:nth-child(2) { border-bottom: 1px solid var(--border); }
+            .hero { padding: 120px 0 60px; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
+            .nav-link { display: none; }
+            .cta-card { padding: 36px 20px; }
+            .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+            .release-header { flex-direction: column; align-items: flex-start; }
         }
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .feat-grid, .steps, .stats-grid { grid-template-columns: 1fr; }
-            .hero { padding: 130px 0 60px; }
-            .hero-actions { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 320px; justify-content: center; }
-            .cta-box { padding: 40px 24px; }
-            .footer-inner { justify-content: center; text-align: center; }
-            .rel { gap: 16px; padding: 0 0 32px 24px; }
-            .rel-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
-            .rel-info { flex-direction: column; gap: 8px; }
+        @media (max-width: 480px) {
+            .metrics-row { grid-template-columns: 1fr 1fr; }
         }
     </style>
-    
-    <!-- Structured Data - JSON-LD -->
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -458,103 +425,69 @@
         "operatingSystem": "Android",
         "inLanguage": "id",
         "image": "https://kkasir.my.id/logo_kkasir.png",
-        "screenshot": "https://kkasir.my.id/logo_kkasir.png",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "1250"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "Kkasir Team",
-            "url": "https://kkasir.my.id"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "IDR"
-        }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Kkasir",
-        "url": "https://kkasir.my.id",
-        "logo": "https://kkasir.my.id/logo_kkasir.png",
-        "description": "Aplikasi kasir POS offline-first terbaik untuk UMKM Indonesia",
-        "sameAs": ["https://instagram.com/kkasir", "https://twitter.com/kkasir"],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+62-xxx-xxxx-xxxx",
-            "contactType": "Customer Service"
-        }
+        "author": { "@type": "Organization", "name": "Kkasir Team", "url": "https://kkasir.my.id" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" }
     }
     </script>
 </head>
 <body>
 
-<div class="ambient">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-</div>
+<div class="glow-bg"></div>
 
-<!-- Nav -->
-<nav>
-    <div class="container nav-inner">
-        <a href="/" class="logo">
-            <div class="logo-mark">K</div>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="wrap navbar-inner">
+        <a href="/" class="brand">
+            <div class="brand-icon">K</div>
             <span>Kkasir</span>
         </a>
-        <div class="nav-links">
-            <a href="#fitur">Fitur</a>
-            <a href="#panduan">Topologi</a>
-        </div>    <a href="#download" class="nav-cta">Download</a>
+        <div class="nav-right">
+            <a href="#fitur" class="nav-link">Fitur</a>
+            <a href="#update" class="nav-link">Update</a>
+            <a href="#download" class="nav-dl dl-main-link">Download</a>
         </div>
     </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero" id="download">
-    <div class="container">
-        <div class="hero-pill reveal">
-            <span class="dot"></span>
-            v2.6.9 — Tersedia sekarang
+    <div class="wrap">
+        <div class="badge">
+            <span class="badge-dot"></span>
+            v2.6.10 — Tersedia sekarang
         </div>
-        <h1 class="reveal" data-delay="100">Solusi Kasir Sederhana untuk<br><span>UMKM Indonesia</span></h1>
-        <p class="hero-desc reveal" data-delay="200">Kelola produk, lacak penjualan, dan pantau bisnis Anda langsung dari genggaman tanpa perlu keahlian khusus.</p>
-        <div class="hero-cta reveal" data-delay="300">
-            <a href="kkasir-v2.6.9.apk" download="kkasir-v2.6.9.apk" class="btn btn-main dl-main-link" id="mainDownload">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <h1>Kasir Digital<br>untuk <span class="accent">UMKM Indonesia</span></h1>
+        <p class="hero-sub">Kelola produk, catat penjualan, dan pantau bisnis dari genggaman. Tanpa internet tetap jalan.</p>
+        <div class="hero-cta">
+            <a href="releases/v2.6.10/kkasir-v2.6.10.apk" download class="btn-primary dl-main-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download APK
             </a>
+            <a href="#fitur" class="btn-secondary">Lihat Fitur</a>
         </div>
-        <p class="hero-meta">Android 8.0+ <span>•</span> 61.5 MB <span>•</span> Gratis + Fitur Pro</p>
+        <p class="hero-note">Android 8.0+<span>•</span>63.8 MB<span>•</span>Gratis</p>
     </div>
 </section>
 
-<!-- Stats -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat">
-                <div class="stat-val">100%</div>
-                <div class="stat-lbl">Offline Capable</div>
+<!-- Metrics -->
+<section class="metrics">
+    <div class="wrap">
+        <div class="metrics-row">
+            <div class="metric anim">
+                <div class="metric-val">100%</div>
+                <div class="metric-lbl">Offline</div>
             </div>
-            <div class="stat">
-                <div class="stat-val">&lt;2s</div>
-                <div class="stat-lbl">Waktu Buka App</div>
+            <div class="metric anim">
+                <div class="metric-val">&lt;2s</div>
+                <div class="metric-lbl">Buka App</div>
             </div>
-            <div class="stat">
-                <div class="stat-val">Pro</div>
-                <div class="stat-lbl">Upgrade Tersedia</div>
+            <div class="metric anim">
+                <div class="metric-val">∞</div>
+                <div class="metric-lbl">Transaksi</div>
             </div>
-            <div class="stat">
-                <div class="stat-val">∞</div>
-                <div class="stat-lbl">Transaksi / Hari</div>
+            <div class="metric anim">
+                <div class="metric-val">Pro</div>
+                <div class="metric-lbl">Multi-Device</div>
             </div>
         </div>
     </div>
@@ -562,122 +495,107 @@
 
 <!-- Features -->
 <section class="features" id="fitur">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-tag">Fitur</div>
-            <h2>Semua yang UMKM butuhkan</h2>
-            <p>Fitur lengkap tanpa biaya tersembunyi. Upgrade ke Pro untuk multi-user dan sinkronisasi cloud.</p>
+    <div class="wrap">
+        <div class="section-header center">
+            <div class="section-label">Fitur</div>
+            <h2 class="section-title">Semua yang usaha Anda butuhkan</h2>
+            <p class="section-sub">Fitur lengkap dari hari pertama. Upgrade ke Pro untuk multi-user dan sync cloud.</p>
         </div>
-        <div class="feat-grid">
-            <div class="feat reveal">
-                <div class="feat-ic purple">📡</div>
+        <div class="feature-grid">
+            <div class="feature-card anim">
+                <div class="feature-icon fi-purple">📡</div>
                 <h3>Offline-First</h3>
-                <p>Transaksi tetap jalan tanpa internet. Data tersimpan lokal dan sync otomatis saat online kembali.</p>
+                <p>Transaksi jalan tanpa internet. Data sync otomatis saat online kembali.</p>
             </div>
-            <div class="feat reveal">
-                <div class="feat-ic green">🧾</div>
+            <div class="feature-card anim">
+                <div class="feature-icon fi-green">🧾</div>
                 <h3>Cetak & Share Struk</h3>
-                <p>Cetak langsung ke printer thermal Bluetooth atau kirim struk via WhatsApp sebagai gambar.</p>
+                <p>Cetak ke printer Bluetooth atau kirim struk via WhatsApp.</p>
             </div>
-            <div class="feat reveal">
-                <div class="feat-ic blue">📊</div>
+            <div class="feature-card anim">
+                <div class="feature-icon fi-blue">📊</div>
                 <h3>Laporan & Grafik</h3>
-                <p>Dashboard penjualan harian & bulanan, produk terlaris, dan export data ke CSV atau PDF.</p>
+                <p>Dashboard penjualan harian, produk terlaris, dan export CSV/PDF.</p>
             </div>
-            <div class="feat reveal">
-                <div class="feat-ic orange">👥</div>
-                <h3>Multi-User (Pro)</h3>
-                <p>Tambah kasir dengan PIN login. Owner bisa pantau semua transaksi dari perangkat manapun.</p>
+            <div class="feature-card anim">
+                <div class="feature-icon fi-amber">👥</div>
+                <h3>Multi-User</h3>
+                <p>Tambah kasir dengan PIN. Pantau semua transaksi dari device manapun.</p>
             </div>
-            <div class="feat reveal">
-                <div class="feat-ic purple">🔄</div>
+            <div class="feature-card anim">
+                <div class="feature-icon fi-purple">🔄</div>
                 <h3>Auto Update</h3>
-                <p>Notifikasi otomatis saat versi baru tersedia. Download sekali klik langsung dari aplikasi.</p>
+                <p>Notifikasi otomatis saat versi baru. Download sekali klik dari dalam app.</p>
             </div>
-            <div class="feat reveal">
-                <div class="feat-ic green">🛡️</div>
+            <div class="feature-card anim">
+                <div class="feature-icon fi-green">🛡️</div>
                 <h3>Aman & Privat</h3>
-                <p>PIN terenkripsi, Row Level Security di cloud, dan data sepenuhnya milik Anda.</p>
+                <p>PIN terenkripsi, Row Level Security di cloud, data milik Anda sepenuhnya.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- How It Works -->
-<section class="how" id="cara-kerja">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-tag">Cara Kerja</div>
-            <h2>3 langkah, langsung pakai</h2>
-            <p>Tidak perlu daftar akun, tidak perlu kartu kredit. Download dan langsung jualan.</p>
+<!-- Steps -->
+<section class="steps-section" id="cara-kerja">
+    <div class="wrap">
+        <div class="section-header center">
+            <div class="section-label">Cara Kerja</div>
+            <h2 class="section-title">3 langkah, langsung pakai</h2>
+            <p class="section-sub">Tanpa daftar akun, tanpa kartu kredit. Download dan langsung jualan.</p>
         </div>
-        <div class="steps">
-            <div class="step reveal" data-num="1">
+        <div class="steps-list">
+            <div class="step-card anim">
+                <div class="step-num">01</div>
                 <h3>Download & Install</h3>
-                <p>Download APK dari halaman ini. Buka file, izinkan instalasi, dan selesai. Tidak perlu Play Store.</p>
+                <p>Download APK dari halaman ini, izinkan instalasi, selesai.</p>
             </div>
-            <div class="step reveal" data-num="2">
+            <div class="step-card anim">
+                <div class="step-num">02</div>
                 <h3>Tambah Produk</h3>
-                <p>Masukkan nama, harga, dan stok produk Anda. Bisa juga import dari file CSV jika sudah punya data.</p>
+                <p>Masukkan nama, harga, stok. Bisa juga import dari CSV.</p>
             </div>
-            <div class="step reveal" data-num="3">
+            <div class="step-card anim">
+                <div class="step-num">03</div>
                 <h3>Mulai Transaksi</h3>
-                <p>Ketuk produk, atur jumlah, terima pembayaran. Struk bisa dicetak atau dikirim ke pelanggan.</p>
+                <p>Ketuk produk, terima pembayaran. Struk bisa dicetak atau dikirim.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Releases -->
-<section class="releases" id="changelog">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-tag">Update Terbaru</div>
-            <h2>Apa yang Baru</h2>
-            <p>Kkasir v2.6.7 hadir dengan berbagai fitur baru dan perbaikan.</p>
+<!-- Update Section -->
+<section class="changelog" id="update">
+    <div class="wrap">
+        <div class="section-header center">
+            <h2 class="section-title">Versi Terbaru</h2>
         </div>
-        <div class="rel-list" id="releasesList">
-            <div class="rel current reveal visible">
-                <div class="rel-meta">
-                    <div class="rel-ver">
-                        <h3 id="verTitle">v1.2.6</h3>
-                        <span class="tag tag-new">Terbaru</span>
+        <div class="release-list" id="releasesList">
+            <!-- Static fallback: shown when version.json fetch fails (e.g. file://) -->
+            <div class="release-item latest">
+                <div class="release-header">
+                    <div class="release-title">
+                        <h3>v2.6.10</h3>
                     </div>
-                    <div class="rel-info" id="verMeta">
-                        <span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            5 April 2026
-                        </span>
-                        <span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                            61.5 MB
-                        </span>
-                    </div>
+                    <span class="release-date">7 Apr 2026 · 63.8 MB</span>
                 </div>
-                <div class="rel-content">
-                    <ul class="rel-changes" id="verChanges">
-                        <li>Perbaikan masalah data tidak sinkron setelah device pertama kali dibuka.</li>
-                        <li>Aplikasi sekarang secara otomatis mendownload dan menginstal update.</li>
-                        <li>Fitur Auto-Login: Kasir langsung masuk tanpa PIN agar lebih cepat.</li>
-                    </ul>
-                    <a href="kkasir-v2.6.9.apk" download="kkasir-v2.6.9.apk" class="btn-sm dl-base-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download APK
-                    </a>
-                </div>
+                <a href="releases/v2.6.10/kkasir-v2.6.10.apk" download="kkasir-v2.6.10.apk" class="dl-btn dl-btn-accent dl-main-link" style="margin-top: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download APK
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-box reveal">
-            <h2>Siap mengelola toko Anda?</h2>
-            <p>Download Kkasir sekarang dan rasakan kemudahan bertransaksi tanpa batas.</p>
-            <a href="kkasir-v2.6.9.apk" download="kkasir-v2.6.9.apk" class="btn btn-main dl-main-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+<section class="cta">
+    <div class="wrap">
+        <div class="cta-card anim">
+            <h2>Siap kelola toko Anda?</h2>
+            <p>Download sekarang dan rasakan kemudahan bertransaksi tanpa batas.</p>
+            <a href="releases/v2.6.10/kkasir-v2.6.10.apk" download class="btn-primary dl-main-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download Sekarang
             </a>
         </div>
@@ -685,9 +603,9 @@
 </section>
 
 <!-- Footer -->
-<footer>
-    <div class="container footer-inner">
-        <p>&copy; 2026 Kkasir. Dibuat untuk UMKM Indonesia.</p>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <p>&copy; 2026 Kkasir — Dibuat untuk UMKM Indonesia.</p>
         <div class="footer-links">
             <a href="#fitur">Fitur</a>
             <a href="mailto:support@kkasir.my.id">Kontak</a>
@@ -696,57 +614,65 @@
 </footer>
 
 <script>
-// ─── Scroll Reveal ───
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+// ─── Scroll Animations ───
+const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
         if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
+            setTimeout(() => e.target.classList.add('show'), i * 80);
+            obs.unobserve(e.target);
         }
     });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, { threshold: 0.1 });
+document.querySelectorAll('.anim').forEach(el => obs.observe(el));
 
-// ─── Dynamic version loader (overrides hardcoded data when hosted) ───
+// ─── Version Loader ───
 (async () => {
     try {
         const r = await fetch('version.json?v=' + Date.now());
         if (!r.ok) return;
         const d = await r.json();
+        const v = d.latest_version;
         
-        // Update hero pill
-        document.querySelector('.hero-pill').innerHTML =
-            '<span class="dot"></span>v' + d.latest_version + ' — Tersedia sekarang';
+        // Update badge
+        document.querySelector('.badge').innerHTML =
+            '<span class="badge-dot"></span>v' + v + ' — Tersedia sekarang';
+        
+        // Update hero note
+        const latest = d.releases[0];
+        document.querySelector('.hero-note').innerHTML =
+            'Android 8.0+<span>•</span>' + (latest.size_mb || 63.8) + ' MB<span>•</span>Gratis';
 
-        // Update meta
-        document.querySelector('.hero-meta').innerHTML =
-            'Android 8.0+ <span>•</span> ' + (d.size_mb || 61.5) + ' MB <span>•</span> Gratis + Fitur Pro';
-
-        // Update What's New section
-        document.getElementById('verTitle').innerText = 'v' + d.latest_version;
-        
-        const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
-        const dt = new Date(d.release_date);
-        const dateStr = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
-        
-        document.getElementById('verMeta').innerHTML = 
-            '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ' + dateStr + '</span>' +
-            '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> ' + (d.size_mb || 61.5) + ' MB</span>';
-
-        if (d.changes && d.changes.length > 0) {
-            const changesList = document.getElementById('verChanges');
-            changesList.innerHTML = d.changes.map(c => 
-                '<li>' + c.replace(/</g,'&lt;') + '</li>'
-            ).join('');
-        }
-        
-        // Dynamically update download links
-        const apkUrl = d.releases[0].apk_file || ('kkasir-v' + d.latest_version + '.apk');
-        document.querySelectorAll('.dl-base-link, .dl-main-link').forEach(btn => {
-            btn.href = apkUrl;
-            btn.download = apkUrl.split('/').pop();
+        // Build download URL
+        const apkUrl = 'releases/v' + v + '/' + latest.apk_file;
+        document.querySelectorAll('.dl-main-link').forEach(btn => {
+            if (btn.tagName === 'A') { btn.href = apkUrl; btn.download = latest.apk_file; }
         });
-    } catch(e) { /* fallback to hardcoded html values */ }
+
+        // Build releases (Only latest)
+        const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+        const list = document.getElementById('releasesList');
+        const rel = d.releases[0];
+        const dt = new Date(rel.release_date);
+        const dateStr = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+        const relApk = 'releases/v' + rel.version + '/' + rel.apk_file;
+        list.innerHTML = `
+            <div class="release-item latest anim">
+                <div class="release-header">
+                    <div class="release-title">
+                        <h3>v${rel.version}</h3>
+                    </div>
+                    <span class="release-date">${dateStr} · ${rel.size_mb} MB</span>
+                </div>
+                <a href="${relApk}" download="${rel.apk_file}" class="dl-btn dl-btn-accent" style="margin-top: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download APK
+                </a>
+            </div>
+        `;
+
+        // Re-observe new anim elements
+        document.querySelectorAll('.release-item.anim').forEach(el => obs.observe(el));
+    } catch(e) { /* fallback */ }
 })();
 </script>
 </body>
