@@ -1,7 +1,20 @@
 {
-  "latest_version": "2.6.9",
+  "latest_version": "2.6.10",
   "min_version": "1.0.0",
   "releases": [
+    {
+      "version": "2.6.10",
+      "apk_file": "kkasir-v2.6.10.apk",
+      "changelog": "Fix Sinkronisasi Staff Multi-Device dan Realtime Sync.",
+      "release_date": "2026-04-07",
+      "size_mb": 63.8,
+      "changes": [
+        "Fix - Versi 2.6.10",
+        "Staff yang dibuat di device lain sekarang langsung muncul secara realtime.",
+        "Realtime sync diperluas ke semua tabel (staff, produk, kategori, transaksi, pengeluaran).",
+        "Perbaikan filter tanggal yang menyebabkan staff baru tidak ter-sync."
+      ]
+    },
     {
       "version": "2.6.9",
       "apk_file": "kkasir-v2.6.9.apk",
