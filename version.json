@@ -1,12 +1,12 @@
 {
-  "latest_version": "2.6.12",
+  "latest_version": "2.6.13",
   "min_version": "1.0.0",
   "releases": [
     {
-      "version": "2.6.12",
-      "apk_file": "kkasir-v2.6.12.apk",
-      "changelog": "Perbaikan penting: Transaksi dan pengeluaran tidak sinkron setelah device direfresh. Sekarang semua data otomatis ditarik dari server.",
-      "release_date": "2026-04-07",
+      "version": "2.6.13",
+      "apk_file": "kkasir-v2.6.13.apk",
+      "changelog": "Perbaikan penting (Lanjutan): Transaksi dan pengeluaran sekarang otomatis disinkronisasikan secara sempurna ke akun Owner.",
+      "release_date": "2026-04-08",
       "size_mb": 63.8,
       "is_mandatory": false,
       "min_version": "2.5.0"
