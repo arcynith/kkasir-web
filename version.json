@@ -1,7 +1,17 @@
 {
-  "latest_version": "2.6.13",
+  "latest_version": "2.6.14",
   "min_version": "1.0.0",
+  "download_url": "https://kkasir-web.vercel.app/releases/kkasir-v2.6.14.apk",
   "releases": [
+    {
+      "version": "2.6.14",
+      "apk_file": "kkasir-v2.6.14.apk",
+      "changelog": "Perbaikan sinkronisasi transaksi Kasir ke Owner dengan mengatasi masalah timestamp dan overwriting data offline.",
+      "release_date": "2026-04-08",
+      "size_mb": 63.8,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.6.13",
       "apk_file": "kkasir-v2.6.13.apk",
