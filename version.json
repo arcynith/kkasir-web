@@ -1,12 +1,12 @@
 {
-  "latest_version": "2.7.16",
+  "latest_version": "2.7.17",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.16/kkasir-v2.7.16.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.17/kkasir-v2.7.17.apk",
   "releases": [
     {
-      "version": "2.7.16",
-      "apk_file": "kkasir-v2.7.16.apk",
-      "changelog": "Optimasi Penyimpanan Storage (menghapus 500MB+ file update lama), serta Perbaikan Kritis untuk Sinkronisasi Transaksi Kasir yang tidak masuk ke akun Owner.",
+      "version": "2.7.17",
+      "apk_file": "kkasir-v2.7.17.apk",
+      "changelog": "Perbaikan Critical Update Loop: Mengatasi bug di mana aplikasi terus meminta update meskipun sudah diinstall. Transaksi PRO kini 100% online.",
       "release_date": "2026-04-08",
       "size_mb": 63.8,
       "is_mandatory": false,
