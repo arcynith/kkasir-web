@@ -1,7 +1,7 @@
 {
   "latest_version": "2.6.14",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/kkasir-v2.6.14.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.6.14/kkasir-v2.6.14.apk",
   "releases": [
     {
       "version": "2.6.14",
