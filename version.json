@@ -1,8 +1,17 @@
 {
-  "latest_version": "2.7.18",
+  "latest_version": "2.7.19",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.18/kkasir-v2.7.18.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.19/kkasir-v2.7.19.apk",
   "releases": [
+    {
+      "version": "2.7.19",
+      "apk_file": "kkasir-v2.7.19.apk",
+      "changelog": "Perbaikan Relasi Database: Transaksi staff kini sinkron sempurna beserta detail item karena pembaruan schema dan foreign key di Supabase.",
+      "release_date": "2026-04-08",
+      "size_mb": 63.8,
+      "is_mandatory": true,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.7.18",
       "apk_file": "kkasir-v2.7.18.apk",
