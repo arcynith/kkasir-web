@@ -1,12 +1,21 @@
 {
-  "latest_version": "2.7.20",
+  "latest_version": "2.7.21",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.20/kkasir-v2.7.20.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.21/kkasir-v2.7.21.apk",
   "releases": [
+    {
+      "version": "2.7.21",
+      "apk_file": "kkasir-v2.7.21.apk",
+      "changelog": "Menghapus fitur Login Google, mempertahankan Reset Password, dan perbaikan bug hapus produk.",
+      "release_date": "2026-04-10",
+      "size_mb": 63.8,
+      "is_mandatory": true,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.7.20",
       "apk_file": "kkasir-v2.7.20.apk",
-      "changelog": "Login Google, Reset Password, dan Perbaikan Bug Hapus Produk yang masih muncul setelah dihapus.",
+      "changelog": "Versi ditarik sementara karena masalah sinkronisasi Google Sign In.",
       "release_date": "2026-04-10",
       "size_mb": 64.0,
       "is_mandatory": true,
