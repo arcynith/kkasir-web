@@ -1,14 +1,14 @@
 {
-  "latest_version": "2.7.19",
+  "latest_version": "2.7.20",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.19/kkasir-v2.7.19.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.20/kkasir-v2.7.20.apk",
   "releases": [
     {
-      "version": "2.7.19",
-      "apk_file": "kkasir-v2.7.19.apk",
-      "changelog": "Perbaikan Relasi Database: Transaksi staff kini sinkron sempurna beserta detail item karena pembaruan schema dan foreign key di Supabase.",
-      "release_date": "2026-04-08",
-      "size_mb": 63.8,
+      "version": "2.7.20",
+      "apk_file": "kkasir-v2.7.20.apk",
+      "changelog": "Login Google, Reset Password, dan Perbaikan Bug Hapus Produk yang masih muncul setelah dihapus.",
+      "release_date": "2026-04-10",
+      "size_mb": 64.0,
       "is_mandatory": true,
       "min_version": "2.5.0"
     },
