@@ -1,8 +1,26 @@
 {
-  "latest_version": "2.7.21",
+  "latest_version": "2.8.0",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.7.21/kkasir-v2.7.21.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.8.0/kkasir-v2.8.0.apk",
   "releases": [
+    {
+      "version": "2.8.0",
+      "apk_file": "kkasir-v2.8.0.apk",
+      "changelog": "Menambah notifikasi info toko, dan manajemen stok secara default dinonaktifkan.",
+      "release_date": "2026-04-11",
+      "size_mb": 63.8,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
+    {
+      "version": "2.7.22",
+      "apk_file": "kkasir-v2.7.22.apk",
+      "changelog": "Perbaikan bug printer bluetooth saat mencetak struk.",
+      "release_date": "2026-04-10",
+      "size_mb": 63.8,
+      "is_mandatory": true,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.7.21",
       "apk_file": "kkasir-v2.7.21.apk",
