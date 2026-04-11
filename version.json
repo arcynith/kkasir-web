@@ -1,8 +1,17 @@
 {
-  "latest_version": "2.8.1",
+  "latest_version": "2.8.2",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.8.1/kkasir-v2.8.1.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.8.2/kkasir-v2.8.2.apk",
   "releases": [
+    {
+      "version": "2.8.2",
+      "apk_file": "kkasir-v2.8.2.apk",
+      "changelog": "Menambah pengaturan baru: Auto-Print setelah bayar, Peringatan stok, Hide saldo. Perbaikan masalah mounted check.",
+      "release_date": "2026-04-11",
+      "size_mb": 63.8,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.8.1",
       "apk_file": "kkasir-v2.8.1.apk",
