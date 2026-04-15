@@ -1,8 +1,17 @@
 {
-  "latest_version": "2.8.5",
+  "latest_version": "2.8.6",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.8.5/kkasir-v2.8.5.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.8.6/kkasir-v2.8.6.apk",
   "releases": [
+    {
+      "version": "2.8.6",
+      "apk_file": "kkasir-v2.8.6.apk",
+      "changelog": "Security patch: Perbaikan keamanan pada fungsi redeem_subscription_code (Search Path Mutable Lint).",
+      "release_date": "2026-04-15",
+      "size_mb": 63.8,
+      "is_mandatory": true,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.8.5",
       "apk_file": "kkasir-v2.8.5.apk",
