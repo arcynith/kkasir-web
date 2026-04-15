@@ -1,8 +1,17 @@
 {
-  "latest_version": "2.9.0",
+  "latest_version": "2.9.1",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.9.0/kkasir-v2.9.0.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v2.9.1/kkasir-v2.9.1.apk",
   "releases": [
+    {
+      "version": "2.9.1",
+      "apk_file": "kkasir-v2.9.1.apk",
+      "changelog": "Perbaikan bug tombol 'Tambah Manual' yang hilang saat keranjang terisi, serta perbaikan update loop.",
+      "release_date": "2026-04-15",
+      "size_mb": 63.9,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.9.0",
       "apk_file": "kkasir-v2.9.0.apk",
