@@ -1,8 +1,17 @@
 {
-  "latest_version": "2.9.1",
+  "latest_version": "3.0.0",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v2.9.1/kkasir-v2.9.1.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v3.0.0/kkasir-v3.0.0.apk",
   "releases": [
+    {
+      "version": "3.0.0",
+      "apk_file": "kkasir-v3.0.0.apk",
+      "changelog": "Major Update - Vendku v3.0.0: Rebranding besar dari Kashift menjadi Vendku. Modernisasi UI secara menyeluruh (gaya iOS 17) pada form produk, otentikasi PIN/Numpad, serta perombakan penuh pada halaman Informasi Toko. Pengaturan privasi ekstra untuk staf kasir.",
+      "release_date": "2026-05-01",
+      "size_mb": 65.0,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "2.9.1",
       "apk_file": "kkasir-v2.9.1.apk",
