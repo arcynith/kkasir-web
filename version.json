@@ -1,8 +1,17 @@
 {
-  "latest_version": "3.1.1",
+  "latest_version": "3.1.2",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v3.1.1/vendku-v3.1.1.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v3.1.2/vendku-v3.1.2.apk",
   "releases": [
+    {
+      "version": "3.1.2",
+      "apk_file": "vendku-v3.1.2.apk",
+      "changelog": "Menambahkan cadangan token AI otomatis (otomatis ganti jika limit), memperbaiki UI di halaman Tentang Aplikasi, serta memperbarui tampilan Syarat dan Ketentuan & Kebijakan Privasi menjadi layar penuh (fullscreen).",
+      "release_date": "2026-05-01",
+      "size_mb": 65.0,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "3.1.1",
       "apk_file": "vendku-v3.1.1.apk",
