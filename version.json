@@ -1,12 +1,12 @@
 {
-  "latest_version": "3.1.4",
+  "latest_version": "3.1.5",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v3.1.4/vendku-v3.1.4.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v3.1.5/vendku-v3.1.5.apk",
   "releases": [
     {
-      "version": "3.1.4",
-      "apk_file": "vendku-v3.1.4.apk",
-      "changelog": "Perbaikan tampilan UI: teks dan tombol persetujuan AI yang lebih rapi, dan icon Sparkle yang lebih segar.",
+      "version": "3.1.5",
+      "apk_file": "vendku-v3.1.5.apk",
+      "changelog": "Perbaikan bug transparansi pada dialog Ganti PIN dan Kunci Otomatis, serta penerapan desain modern khas iOS 26.",
       "release_date": "2026-05-01",
       "size_mb": 65.0,
       "is_mandatory": false,
