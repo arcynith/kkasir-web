@@ -1,8 +1,17 @@
 {
-  "latest_version": "3.0.0",
+  "latest_version": "3.0.1",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v3.0.0/kkasir-v3.0.0.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v3.0.1/kkasir-v3.0.1.apk",
   "releases": [
+    {
+      "version": "3.0.1",
+      "apk_file": "kkasir-v3.0.1.apk",
+      "changelog": "Update minor UI iOS 26: Perbaikan teks tipe produk, penghapusan tombol unduh laporan, optimasi shadow pada navigasi bawah, serta gaya borderless untuk halaman langganan.",
+      "release_date": "2026-05-01",
+      "size_mb": 64.6,
+      "is_mandatory": false,
+      "min_version": "2.5.0"
+    },
     {
       "version": "3.0.0",
       "apk_file": "kkasir-v3.0.0.apk",
