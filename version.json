@@ -1,8 +1,17 @@
 {
-  "latest_version": "3.1.5",
+  "latest_version": "3.2.0",
   "min_version": "1.0.0",
-  "download_url": "https://kkasir-web.vercel.app/releases/v3.1.5/vendku-v3.1.5.apk",
+  "download_url": "https://kkasir-web.vercel.app/releases/v3.2.0/vendku-v3.2.0.apk",
   "releases": [
+    {
+      "version": "3.2.0",
+      "apk_file": "vendku-v3.2.0.apk",
+      "changelog": "Migrasi AI ke Google Gemini 1.5 Flash (lebih cepat & stabil), pilihan metode pembayaran Bank & E-Wallet yang lebih detail, visualisasi laporan pembayaran (Pie Chart & Tabel), fitur anti-spam AI, serta perlindungan API key.",
+      "release_date": "2026-05-03",
+      "size_mb": 65.1,
+      "is_mandatory": true,
+      "min_version": "2.5.0"
+    },
     {
       "version": "3.1.5",
       "apk_file": "vendku-v3.1.5.apk",
