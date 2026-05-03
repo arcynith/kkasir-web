@@ -2,6 +2,7 @@
   "latest_version": "3.2.0",
   "min_version": "1.0.0",
   "download_url": "https://kkasir-web.vercel.app/releases/v3.2.0/vendku-v3.2.0.apk",
+  "_changelog_guidelines": "PENTING: changelog harus SINGKAT (1 kalimat, maks 15 kata), ditulis untuk pengguna awam, BUKAN developer. Hindari istilah teknis seperti 'migrasi', 'API', 'engine', 'refactor', dll. Contoh BAGUS: 'Peningkatan performa AI dan laporan lebih detail.' Contoh BURUK: 'Migrasi AI ke Google Gemini 1.5 Flash, implementasi Pie Chart untuk visualisasi data pembayaran.'",
   "releases": [
     {
       "version": "3.2.0",
