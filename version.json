@@ -6,7 +6,7 @@
     {
       "version": "3.2.0",
       "apk_file": "vendku-v3.2.0.apk",
-      "changelog": "Migrasi AI ke Google Gemini 1.5 Flash (lebih cepat & stabil), pilihan metode pembayaran Bank & E-Wallet yang lebih detail, visualisasi laporan pembayaran (Pie Chart & Tabel), fitur anti-spam AI, serta perlindungan API key.",
+      "changelog": "Peningkatan performa AI, pembayaran lebih lengkap, dan laporan lebih detail.",
       "release_date": "2026-05-03",
       "size_mb": 65.1,
       "is_mandatory": true,
