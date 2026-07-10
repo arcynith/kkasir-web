@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /releases/
+
+Sitemap: https://kkasir.my.id/sitemap.xml
