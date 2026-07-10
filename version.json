@@ -1,7 +1,7 @@
 {
     "latest_version":  "3.5.0",
     "min_version":  "1.0.0",
-    "download_url":  "https://kkasir-web.vercel.app/Download/v3.5.0/vendku-v3.5.0.apk",
+    "download_url":  "https://github.com/arcynith/kkasir-web/raw/main/Download/v3.5.0/vendku-v3.5.0.apk",
     "_changelog_guidelines":  "PENTING: changelog harus SINGKAT (1 kalimat, maks 15 kata), ditulis untuk pengguna awam, BUKAN developer. Hindari istilah teknis seperti \u0027migrasi\u0027, \u0027API\u0027, \u0027engine\u0027, \u0027refactor\u0027, dll. Contoh BAGUS: \u0027Peningkatan performa AI dan laporan lebih detail.\u0027 Contoh BURUK: \u0027Migrasi AI ke Google Gemini 1.5 Flash, implementasi Pie Chart untuk visualisasi data pembayaran.\u0027",
     "releases":  [
                      {
